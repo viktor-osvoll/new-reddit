@@ -16,10 +16,10 @@ class PostController extends Controller
         ]);
     }
 
-    public function show(){
+    public function show($id){
         $post = Post::findOrFail($id);
 
-        return view('posts.show', ['posts' => $posts]);
+        return view('posts.show', ['post' => $post]);
     }
 
     public function create() {
@@ -35,5 +35,12 @@ class PostController extends Controller
         $post->save();
 
         return redirect('/')->with('mssg', 'Thanks for ordering');
+    }
+
+    public function destroy($id){
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        return redirect('/posts');
     }
 }
