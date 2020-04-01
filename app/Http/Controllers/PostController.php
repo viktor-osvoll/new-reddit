@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index() {
 
-        $pizzas = Pizza::latest()->get();
+        $posts = Post::latest()->get();
 
         return view('posts.index', [
             'posts' => $posts,
