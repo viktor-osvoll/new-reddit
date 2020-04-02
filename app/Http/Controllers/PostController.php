@@ -56,4 +56,30 @@ class PostController extends Controller
 
         return redirect('/posts');
     }
+
+    public function edit($id) {
+        $posts = Post::find($id);
+        
+        return view('postupdateform')->with('posts', $posts);
+    }
+
+    public function update(Request $request ,$id) {
+        $posts = Post::find($id);
+
+        $posts->title = $request->input('title');
+        $posts->content = $request->input('content');
+        $posts->image = $request->input('image');
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+             $extension = $file->getClientOriginalExtension();
+             $filename = time() . '.' . $extension;
+             $file->move('uploads/post/', $filename);
+             $posts->image = $filename;
+        }
+
+        $posts->save();
+
+        return redirect('/posts')->with('posts', $posts);
+    }
 }

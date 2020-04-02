@@ -15,6 +15,7 @@
         @method('DELETE')
         <button class="btn btn-primary">Delete</button>
     </form>
+        <a href="/editimage/{{ $post->id }}" class="btn btn-secondary" style="margin-top: 1%;">Edit</a>
     </div>
   </div>
    
