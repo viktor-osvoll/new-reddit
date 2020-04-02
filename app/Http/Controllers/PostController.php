@@ -26,15 +26,28 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store() {
+    public function store(Request $request) {
         $post = new Post();
 
-        $post->title = request('title');
-        $post->content = request('content');
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->image = $request->input('image');
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+             $extension = $file->getClientOriginalExtension();
+             $filename = time() . '.' . $extension;
+             $file->move('uploads/post/', $filename);
+             $post->image = $filename;
+        }else {
+            return $request;
+            $post->image = '';
+        }
 
         $post->save();
 
-        return redirect('/')->with('mssg', 'Thanks for ordering');
+        return redirect('/posts');
+
     }
 
     public function destroy($id){
