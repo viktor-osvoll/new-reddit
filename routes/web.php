@@ -15,6 +15,7 @@ Route::delete('/posts/{id}', 'PostController@destroy')->name('posts.destroy')->m
 Route::post('/addimage', 'PostController@store')->name('addimage');
 Route::get('/editimage/{id}', 'PostController@edit')->middleware('auth');;
 Route::put('/updateimage/{id}', 'PostController@update');
+Route::get('/search', 'PostController@search');
 
 
 Auth::routes();

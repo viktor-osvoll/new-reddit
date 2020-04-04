@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -81,5 +82,12 @@ class PostController extends Controller
         $posts->save();
 
         return redirect('/posts')->with('posts', $posts);
+    }
+
+    public function search(Request $request) {
+        $search = $request->get('search');
+        $posts = DB::table('posts')->where('title', 'like', '%'.$search.'%')->paginate(5);
+        
+        return view('posts.index', ['posts' => $posts]);
     }
 }
