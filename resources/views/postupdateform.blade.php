@@ -21,6 +21,12 @@
             <label>Title:</label>
         <input type="text" name="title" class="form-control" value="{{ $posts->title }}" placeholder="Title">
         </div>
+        <select name="category_id" class="form-control">
+            <?php $selectedvalue = $posts->category_id ?>
+            @foreach ($subreddits as $item => $value)
+          <option value="{{$value->id}}" {{ $selectedvalue == $value['id'] ? 'selected="selected"' : '' }}>{{$value->title}}</option>
+            @endforeach
+          </select>
         <div class="form-group">
             <label>Content:</label>
         <input type="text" name="content" class="form-control" value="{{ $posts->content }}" placeholder="Content">

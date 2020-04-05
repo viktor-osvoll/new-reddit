@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Subreddit;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,9 @@ class PostController extends Controller
     }
 
     public function create() {
-        return view('posts.create');
+
+        $subreddit = Subreddit::all();
+        return view('posts.create', ['subreddit' => $subreddit]);
     }
 
     public function store(Request $request) {
@@ -32,6 +35,7 @@ class PostController extends Controller
 
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->category_id = $request->input('category_id');
         $post->image = $request->input('image');
 
         if($request->hasFile('image')) {
@@ -60,8 +64,9 @@ class PostController extends Controller
 
     public function edit($id) {
         $posts = Post::find($id);
+        $subreddits = Subreddit::all();
         
-        return view('postupdateform')->with('posts', $posts);
+        return view('postupdateform', ['subreddits' => $subreddits])->with('posts', $posts);
     }
 
     public function update(Request $request ,$id) {
@@ -69,6 +74,7 @@ class PostController extends Controller
 
         $posts->title = $request->input('title');
         $posts->content = $request->input('content');
+        $posts->category_id = $request->input('category_id');
         $posts->image = $request->input('image');
 
         if($request->hasFile('image')) {

@@ -88,6 +88,8 @@
                 <div class="links">
                     <a href="/posts">View All Posts</a>
                     <a href="/posts/create">Create a New Post</a>
+                    <a href="/subreddits">View Subreddits</a>
+                    <a href="/subreddits/create">Create a Subreddit</a>
                 </div>
             </div>
         </div>

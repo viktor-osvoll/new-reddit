@@ -9,7 +9,14 @@
           <label for="title">Title:</label>
           <input type="title" class="form-control" id="title" name="title" placeholder="Title">
         </div>
-        <div class="form-group">
+
+        <select name="category_id" class="form-control">
+          @foreach ($subreddit as $item => $value)
+        <option value="{{$value->id}}">{{$value->title}}</option>
+          @endforeach
+        </select>
+
+        {{-- <div class="form-group">
           <label for="subreddit">Subreddit:</label>
           <select class="form-control" id="subreddit">
             <option>Gaming</option>
@@ -18,7 +25,7 @@
             <option>Food</option>
             <option>Coding</option>
           </select>
-        </div>
+        </div> --}}
         <div class="form-group">
           <label for="content">Content:</label>
           <textarea class="form-control" id="content" name="content" rows="6" placeholder="What is this post about?"></textarea>
