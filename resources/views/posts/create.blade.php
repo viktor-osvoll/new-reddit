@@ -10,7 +10,7 @@
           <input type="title" class="form-control" id="title" name="title" placeholder="Title">
         </div>
         <label>Subreddit:</label>
-        <select name="category_id" class="form-control">
+        <select name="subreddit_id" class="form-control">
           @foreach ($subreddit as $item => $value)
         <option value="{{$value->id}}">{{$value->title}}</option>
           @endforeach

@@ -35,7 +35,7 @@ class PostController extends Controller
 
         $post->title = $request->input('title');
         $post->content = $request->input('content');
-        $post->category_id = $request->input('category_id');
+        $post->subreddit_id = $request->input('subreddit_id');
         $post->image = $request->input('image');
 
         if($request->hasFile('image')) {
@@ -74,7 +74,7 @@ class PostController extends Controller
 
         $posts->title = $request->input('title');
         $posts->content = $request->input('content');
-        $posts->category_id = $request->input('category_id');
+        $posts->subreddit_id = $request->input('subreddit_id');
         $posts->image = $request->input('image');
 
         if($request->hasFile('image')) {

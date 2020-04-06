@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Subreddit;
+use App\Post;
 
 class SubredditController extends Controller
 {
@@ -21,10 +22,12 @@ class SubredditController extends Controller
     public function store() {
 
 
-        $subreddit = new Subreddit();
+        $subreddit = new Subreddit();   
 
         $subreddit->title = request('title');
         $subreddit->name = request('name');
+        $post->subreddit_id = request('subreddit_id');
+    
 
         $subreddit->save();
 
@@ -41,10 +44,14 @@ class SubredditController extends Controller
         return view('subreddits.create');
     }
 
-    public function show(){
-        $subreddit = Subreddit::findOrFail($id);
-        return view('subreddits.show', ['subreddit' => $subreddit]);
+    public function show($id){
+       /*  $subreddit = Post::latest()->get(); */
+       $subreddits = Post::where('subreddit_id', $id)->get();
+       $id = $id;
+    
+        return view('subreddits.show', ['subreddits' => $subreddits]);
     }
+    
 
 
 
