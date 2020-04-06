@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Subreddit;
 
 
 Route::get('/', function () {
@@ -18,9 +19,9 @@ Route::get('/editimage/{id}', 'PostController@edit')->middleware('auth');;
 Route::put('/updateimage/{id}', 'PostController@update');
 Route::get('/search', 'PostController@search');
 
+Route::post('/subreddits', 'SubredditController@store')->name('subreddits.store');
 Route::get('/subreddits', 'SubredditController@index')->name('subreddits.index');
 Route::get('/subreddits/create', 'SubredditController@create')->name('subreddits.create');
-Route::post('/subreddits', 'SubredditController@store')->name('subreddits.store');
 Route::get('/subreddits/{id}', 'SubredditController@show')->name('subreddits.show');
 
 

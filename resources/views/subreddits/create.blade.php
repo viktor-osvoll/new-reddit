@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
 <form action="/subreddits" method="POST">
     @csrf
 <div class="form-group">
@@ -13,4 +14,5 @@
   </div>
   <button type="submit" name="submit" class="btn btn-primary"> Create </button>
 </form>
+</div>
 @endsection

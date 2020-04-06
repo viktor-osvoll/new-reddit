@@ -21,6 +21,7 @@
             <label>Title:</label>
         <input type="text" name="title" class="form-control" value="{{ $posts->title }}" placeholder="Title">
         </div>
+        <label>Subreddit:</label>
         <select name="category_id" class="form-control">
             <?php $selectedvalue = $posts->category_id ?>
             @foreach ($subreddits as $item => $value)
