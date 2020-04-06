@@ -24,7 +24,7 @@ Route::get('/subreddits', 'SubredditController@index')->name('subreddits.index')
 Route::get('/subreddits/create', 'SubredditController@create')->name('subreddits.create');
 Route::get('/subreddits/{id}', 'SubredditController@show')->name('subreddits.show');
 
-Route::post('/posts/{post}/comments', 'CommentsController@store');
+Route::post('/posts/{post}/comments', 'CommentsController@store')->middleware('auth');
 
 
 Auth::routes();
