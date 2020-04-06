@@ -16,11 +16,14 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('content');
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('subreddit_id');
             $table->mediumText('image')->nullable();
+
+            $table->foreign('subreddit_id')
+            ->references('id')
+            ->on('subreddits');
         });
     }
 

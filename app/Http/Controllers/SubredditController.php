@@ -41,6 +41,11 @@ class SubredditController extends Controller
         return view('subreddits.create');
     }
 
+    public function show(){
+        $subreddit = Subreddit::findOrFail($id);
+        return view('subreddits.show', ['subreddit' => $subreddit]);
+    }
+
 
 
 
