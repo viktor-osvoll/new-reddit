@@ -7,7 +7,7 @@
 {{-- <a href="/posts/{{ $post->id }}"><img src="img/monkey.jpg" class="card-img-top" alt="img"></a> --}}
     <div class="card-body">
       <h5 class="card-title">{{ $value->title }}</h5>
-    <a href="/subreddits/{{ $value->id }}">Visit this Subreddit{{ $value->name }}</a>
+    <a href="/subreddits/{{ $value->id }}">Visit this Subreddit->{{ $value->name }}</a>
     <p> {{ $value->create_at }} </p>
     </div>
 

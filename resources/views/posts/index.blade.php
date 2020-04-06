@@ -13,7 +13,7 @@
       <h5 class="card-title">{{ $post->title }}</h5>
       <p class="card-text"> {{ $post->content }} </p>
       <h4 style="font-size: 15px;"> {{ $post->created_at }} </h4>
-      <p> #{{ $post->title }} </p>
+      {{-- <p> #{{ $post->title }} </p> --}}
     </div>
   </div>
 @endforeach
