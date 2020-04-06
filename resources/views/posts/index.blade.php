@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')       
-<a href="{{ route('subreddits.index')}}" class="btn btn-primary btn-sm">Add Subreddit</a>
 <div class="wrapper post-index" style="text-align: center; margin-top: 5%;">
     <div class="container">
         <div class="row">
@@ -16,7 +15,6 @@
       <h4 style="font-size: 15px;"> {{ $post->created_at }} </h4>
       <p> #{{ $post->title }} </p>
     </div>
-
   </div>
 @endforeach
         </div>

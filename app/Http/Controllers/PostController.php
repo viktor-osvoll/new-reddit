@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Subreddit;
-use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Subreddit;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -74,7 +74,7 @@ class PostController extends Controller
 
         $posts->title = $request->input('title');
         $posts->content = $request->input('content');
-        $posts->subreddit_id = $request->input('subreddit_id');
+        /* $posts->subreddit_id = $request->input('subreddit_id'); */
         $posts->image = $request->input('image');
 
         if($request->hasFile('image')) {

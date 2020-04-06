@@ -26,7 +26,7 @@ class SubredditController extends Controller
 
         $subreddit->title = request('title');
         $subreddit->name = request('name');
-        $post->subreddit_id = request('subreddit_id');
+       /*  $subreddit->subreddit_id = request('subreddit_id'); */
     
 
         $subreddit->save();
@@ -45,10 +45,10 @@ class SubredditController extends Controller
     }
 
     public function show($id){
-       /*  $subreddit = Post::latest()->get(); */
+        
        $subreddits = Post::where('subreddit_id', $id)->get();
        $id = $id;
-    
+
         return view('subreddits.show', ['subreddits' => $subreddits]);
     }
     
