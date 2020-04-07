@@ -35,7 +35,7 @@
         <label>Image:</label>
         <div class="input-group">
             <div class="custom-file">
-            <input type="file" name="image" class="custom-file-input" value="{{ $posts->image }}">
+            <input type="file" name="image" class="custom-file-input" value="{{ $posts->image }}" required>
             <label class="custom-file-label">Choose file</label>
             </div>
         </div>

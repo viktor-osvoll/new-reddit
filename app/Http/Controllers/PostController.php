@@ -74,7 +74,6 @@ class PostController extends Controller
 
         $posts->title = $request->input('title');
         $posts->content = $request->input('content');
-        /* $posts->subreddit_id = $request->input('subreddit_id'); */
         $posts->image = $request->input('image');
 
         if($request->hasFile('image')) {

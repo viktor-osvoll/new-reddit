@@ -15,6 +15,12 @@
                     @endif
 
                     You are logged in!
+                    <div class="links">
+                        <a href="/posts">- Front Page</a> <br />
+                        <a href="/posts/create">- Create a New Post</a> <br />
+                        <a href="/subreddits">- Subreddits</a> <br />
+                        <a href="/subreddits/create">- Create a Subreddit</a>
+                    </div>
                 </div>
             </div>
         </div>

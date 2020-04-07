@@ -26,68 +26,29 @@ class SubredditController extends Controller
 
         $subreddit->title = request('title');
         $subreddit->name = request('name');
-       /*  $subreddit->subreddit_id = request('subreddit_id'); */
     
 
         $subreddit->save();
 
         return redirect('/subreddits');
-        
-       /*  $subreddit = New Subreddit;
-        $subreddit->title = $request->title;
-        $subreddit->save();
-        
-        return redirect()->route('/subreddits'); */
+    
     }
 
     public function create() {
         return view('subreddits.create');
     }
 
-    public function show($id){
+    public function show($id, Request $request){
+        /* $bajs = new Subreddit();
+        $bajs->title = request('title'); 
         
+       $bajs = Subreddit::all(); 
+        $bajs->title = $request->input('title'); */
+
+       
        $subreddits = Post::where('subreddit_id', $id)->get();
        $id = $id;
 
-        return view('subreddits.show', ['subreddits' => $subreddits]);
+        return view('subreddits.show', ['subreddits' => $subreddits /* 'bajs' => $bajs */]);
     }
-    
-
-
-
-
-
-
-
-
-
-    /* public function index() {
-
-        $subreddits = Subreddit::latest()->get();
-
-        return view('subreddits.index', [
-            'subreddits' => $subreddits,
-        ]);
-    }
-
-    public function show($id){
-        $subreddit = Subreddit::findOrFail($id);
-
-        return view('subreddits.show', ['subreddit' => $subreddit]);
-    }
-
-    public function create() {
-        return view('subreddits.create');
-    }
-
-    public function store() {
-        $subreddit = new Subreddit();
-
-        $subreddit->title = request('title');
-        $subreddit->name = request('name');
-
-        $subreddit->save();
-
-        return redirect('/subreddits');
-    } */
 }

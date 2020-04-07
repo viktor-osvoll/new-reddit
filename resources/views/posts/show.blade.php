@@ -5,7 +5,7 @@
     <img src="{{ asset('uploads/post/' . $post->image) }}" class="card-img-top" alt="...">
     <div class="card-body">
     <h5 class="card-title" style="font-size: 40px;">{{ $post->title }}</h5>
-    <p class="card-text" style="font-size: 25px;">{{ $post->content }}</p>
+    <p class="card-text" style="font-size: 25px;">{{ $post->content }}</p>  
     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
         @csrf
         @method('DELETE')
@@ -33,7 +33,7 @@
         <form action="/posts/{{ $post->id }}/comments" method="POST">
           {{ csrf_field() }}
             <div class="form-group">
-              <textarea name="body" cols="30" rows="10" class="form-control">
+              <textarea name="body" cols="30" rows="10" class="form-control" placeholder="Say something...">
                 
               </textarea>
             </div>

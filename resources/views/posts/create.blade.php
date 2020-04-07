@@ -16,16 +16,6 @@
           @endforeach
         </select>
 
-        {{-- <div class="form-group">
-          <label for="subreddit">Subreddit:</label>
-          <select class="form-control" id="subreddit">
-            <option>Gaming</option>
-            <option>Animals</option>
-            <option>Cars</option>
-            <option>Food</option>
-            <option>Coding</option>
-          </select>
-        </div> --}}
         <div class="form-group">
           <label for="content">Content:</label>
           <textarea class="form-control" id="content" name="content" rows="6" placeholder="What is this post about?"></textarea>
@@ -33,7 +23,7 @@
         <div class="form-group">
             <div class="custom-file">   
             <label for="image">Example file input</label>
-            <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
+            <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1" required>
             </div>
           </div>
           <button type="submit" name="submit" class="btn btn-primary"> Post </button>
