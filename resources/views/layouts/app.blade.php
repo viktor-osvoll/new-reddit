@@ -41,7 +41,7 @@
                     </ul>
                             <form action="/search" method="GET">
                                 <div class="input-group">
-                                    <input type="search" name="search" class="form-control">
+                                    <input type="search" name="search" class="form-control" placeholder="Write a Title">
                                     <span class="input-group-prepend">
                                         <button type="submit" class="btn btn-primary">Search</button>
                                     </span>

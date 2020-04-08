@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('content');
             $table->unsignedBigInteger('subreddit_id');
+            $table->integer('user_id');
             $table->mediumText('image')->nullable();
 
             $table->foreign('subreddit_id')

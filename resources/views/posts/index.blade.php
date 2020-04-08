@@ -4,19 +4,20 @@
     <div class="container">
 @foreach($posts as $post)
   <!-- Page Heading -->
-  <h1 class="my-4" style="font-size: 60px;">{{ $post->title}}
+  <h1 class="my-4" style="font-size: 60px;">{{ $post->title}}<br>
+  <small style="font-size: 20px;">{{ $post->user->name }} - {{ $post->created_at->diffForHumans() }}</small>
   </h1>
 <div class="row">
   <!-- Project One -->
     <div class="col-md-7">
       <a href="/posts/{{ $post->id }}">
-        <img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('uploads/post/' . $post->image) }}">
+        <img style="width: 80%;" class="img-fluid rounded mb-3 mb-md-0" src="{{ asset('uploads/post/' . $post->image) }}">
       </a>
     </div>
     <div class="col-md-5">
       <p style="font-size: 30px;"> {{ $post->content }} </p>
     </div>
-  </div>
+  </div><br>
                 <hr>
 @endforeach
       
