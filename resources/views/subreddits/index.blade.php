@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-  
   <h1 style="font-size: 50px; text-align: center;">Subreddits<hr></h1>
   <div class="container">
     

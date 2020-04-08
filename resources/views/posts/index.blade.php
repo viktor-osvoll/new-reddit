@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')       
-    <div class="container">
+<div class="container">
 @foreach($posts as $post)
   <!-- Page Heading -->
   <h1 class="my-4" style="font-size: 60px;">{{ $post->title}}<br>

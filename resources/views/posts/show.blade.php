@@ -9,13 +9,6 @@
     <p class="card-text" style="font-size: 25px;">{{ $post->content }}</p>  
     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
         @csrf
-      
-        {{-- @if ($post->user->name == $users->name)
-        hej
-        @else
-            fjk
-        @endif --}}
-        
         @method('DELETE')
         <button class="btn btn-primary">Delete</button>
     </form>
@@ -37,15 +30,7 @@
             </div>
       </div>
       <br>
-                  
-
-      {{-- <h1 style="font-size: 50px;">{{ $comment->user->name }}</h1>
-      <li class="list-group-item" style="font-size: 40px; text-align: center;">
-        <strong>
-          {{ $comment->created_at->diffForHumans() }}
-        </strong>
-        {{ $comment->body }}
-      </li> --}}
+                
         
     @endforeach
             <br><br>

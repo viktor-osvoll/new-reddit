@@ -40,6 +40,8 @@ class PostController extends Controller
         $post->user_id = auth()->id();
         $post->image = $request->input('image');
 
+
+
         if($request->hasFile('image')) {
             $file = $request->file('image');
              $extension = $file->getClientOriginalExtension();
@@ -58,11 +60,7 @@ class PostController extends Controller
     }
 
     public function destroy($id){
-    /*     $subreddits = Post::where('subreddit_id', $id)->get(); */
-        /* $user_id = Auth::user();
-        $post = Post::where('user_id', $id)->get();
-        $post->delete(); */
-
+    
         $post = Post::findOrFail($id);
         $post->delete();
 
@@ -98,7 +96,7 @@ class PostController extends Controller
 
     public function search(Request $request) {
         $search = $request->get('search');
-        $posts = DB::table('posts')->where('title', 'like', '%'.$search.'%')->paginate(5);
+        $posts = DB::table('subreddits')->where('title', 'like', '%'.$search.'%')->paginate(5);
         
         return view('posts.index', ['posts' => $posts]);
     }

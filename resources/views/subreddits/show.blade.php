@@ -2,8 +2,6 @@
 
 @section('content')
 
-{{-- 
-{{$bajs}} --}}
 
 <div class="container">
   <div class="row">
@@ -20,14 +18,7 @@
         <p> #{{ $subreddit->subreddit_id }} </p>
         
       </div>
-    </div>
- {{-- <div class="card" style="width: 45rem; margin-left: 25%; box-shadow: 3px 6px 12px black;">
-  <div class="card-body">
-  <h5 class="card-title" style="font-size: 40px;">{{ $subreddit->title }}</h5>
-  <p class="card-text" style="font-size: 25px;">{{ $subreddit->content }}</p>
- 
-  </div>
-</div>   --}} 
+    </div> 
         @endforeach 
   </div>
 </div>  

@@ -41,14 +41,6 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-                            <form action="/search" method="GET">
-                                <div class="input-group">
-                                    <input type="search" name="search" class="form-control" placeholder="Write a Title">
-                                    <span class="input-group-prepend">
-                                        <button type="submit" class="btn btn-primary">Search</button>
-                                    </span>
-                                </div>
-                            </form>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -71,7 +63,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('- Logout') }}
+                                        {{ __(' Logout') }}
                                     </a>
 
                                     <a class="dropdown-item" href="/posts">- View all posts</a>
