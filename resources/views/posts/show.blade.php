@@ -9,6 +9,13 @@
     <p class="card-text" style="font-size: 25px;">{{ $post->content }}</p>  
     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
         @csrf
+      
+        {{-- @if ($post->user->name == $users->name)
+        hej
+        @else
+            fjk
+        @endif --}}
+        
         @method('DELETE')
         <button class="btn btn-primary">Delete</button>
     </form>

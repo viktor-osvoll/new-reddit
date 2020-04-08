@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Subreddit;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -57,6 +58,11 @@ class PostController extends Controller
     }
 
     public function destroy($id){
+    /*     $subreddits = Post::where('subreddit_id', $id)->get(); */
+        /* $user_id = Auth::user();
+        $post = Post::where('user_id', $id)->get();
+        $post->delete(); */
+
         $post = Post::findOrFail($id);
         $post->delete();
 
