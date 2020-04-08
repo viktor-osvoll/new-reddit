@@ -46,7 +46,9 @@
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
-                                    </label>
+                                    </label><br>
+                                    <label>Don't have an account?</label>
+                                    <label>Register<a href="{{ route('register') }}"> here</a></label>
                                 </div>
                             </div>
                         </div>

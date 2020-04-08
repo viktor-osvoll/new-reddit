@@ -5,7 +5,7 @@
 @foreach($posts as $post)
   <!-- Page Heading -->
   <h1 class="my-4" style="font-size: 60px;">{{ $post->title}}<br>
-  <small style="font-size: 20px;">{{ $post->user->name }} - {{ $post->created_at->diffForHumans() }}</small>
+  <small style="font-size: 25px;">{{ $post->user->name }} - {{ $post->created_at->diffForHumans() }}</small>
   </h1>
 <div class="row">
   <!-- Project One -->
