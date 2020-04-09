@@ -27,6 +27,8 @@ Route::get('/subreddits/{id}', 'SubredditController@show')->name('subreddits.sho
 
 Route::post('/posts/{post}/comments', 'CommentsController@store')->middleware('auth');
 
+Route::get('profile', 'UserController@profile');
+Route::post('profile', 'UserController@update_avatar')->name('profileupdate');
 
 Auth::routes();
 

@@ -41,14 +41,14 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-                            <form action="/search" method="GET">
+                            {{-- <form action="/search" method="GET">
                                 <div class="input-group">
                                     <input type="search" name="search" class="form-control" placeholder="Write a Title">
                                     <span class="input-group-prepend">
                                         <button type="submit" class="btn btn-primary">Search</button>
                                     </span>
                                 </div>
-                            </form>
+                            </form> --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -63,17 +63,18 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" style="font-size: 25px;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" style="font-size: 25px; position: relative; padding-left: 50px;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img src="/headshots/avatar/default.jpg" style="width:32px; height: 32px; position: absolute; top:10px; left:10px; border-radius: 50%;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item fa fa-btn fa-user" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('- Logout') }}
+                                        {{ __('Logout') }}
                                     </a>
-
+                                <a class="dropdown-item fa fa-btn fa-user" href="{{ url('/profile') }}">Profile</a>
                                     <a class="dropdown-item" href="/posts">- View all posts</a>
                                     <a class="dropdown-item" href="/posts/create">- Create a New Post</a>
                                     <a class="dropdown-item" href="/subreddits">- View Subreddits</a>
